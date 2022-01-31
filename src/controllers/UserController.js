@@ -3,10 +3,7 @@ import config from '../config.js'
 import { v4 as uuidv4 } from 'uuid'
 
 const jwtSignUser = (user) => {
-  const ONE_HOUR = 60 * 60
-  return jwt.sign(user, config.authentication.jwtSecret, {
-    expiresIn: ONE_HOUR,
-  })
+  return jwt.sign(user, config.authentication.jwtSecret)
 }
 
 export const login = async (_, res) => {
